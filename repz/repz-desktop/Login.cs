@@ -17,7 +17,22 @@ namespace repz_desktop
             var password = textBox2.Text;
 
             var user = this._us.Login(email, password);
+            if (user is null)
+            {
+                MessageBox.Show("Bad credentials");
+                return;
+            }
 
+            if (user.Role.Name == "admin")
+            {
+                
+            }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Register form = new Register(_us);
+            form.Show();
         }
     }
 }

@@ -27,3 +27,4 @@ D:\Fontys\ADO\repz\repz\repz-desktop\obj\Debug\net6.0-windows\refint\repz-deskto
 D:\Fontys\ADO\repz\repz\repz-desktop\obj\Debug\net6.0-windows\repz-desktop.pdb
 D:\Fontys\ADO\repz\repz\repz-desktop\obj\Debug\net6.0-windows\repz-desktop.genruntimeconfig.cache
 D:\Fontys\ADO\repz\repz\repz-desktop\obj\Debug\net6.0-windows\ref\repz-desktop.dll
+D:\Fontys\ADO\repz\repz\repz-desktop\obj\Debug\net6.0-windows\repz_desktop.Register.resources

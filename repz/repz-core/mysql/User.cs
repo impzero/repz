@@ -15,7 +15,7 @@ namespace repz_core.mysql
         {
             var query = @"SELECT u.id, u.email, u.name, u.password, r.id, r.name FROM users u
                           JOIN roles r on r.id = u.role_id
-                          WHERE users.email = @Email";
+                          WHERE u.email = @Email";
 
             var reader = MySqlHelper.ExecuteReader(this._dbConn, query, new MySqlParameter[] { new MySqlParameter("Email", loginEmail) });
             if (!reader.HasRows) return null;
@@ -29,6 +29,28 @@ namespace repz_core.mysql
             var roleName = reader.GetString(5);
 
             return new repz.User(id, email, name, password, new repz.Role(roleID, roleName));
+        }
+
+        public bool CreateUser(string name, string email, string password, int roleID)
+        {
+            var query = @"INSERT INTO users (name, email, password, role_id)
+                          VALUES (@Name, @Email, @Password, @RoleID)";
+
+            try
+            {
+                MySqlHelper.ExecuteNonQuery(this._dbConn, query, new MySqlParameter[] {
+                new MySqlParameter("Name",name),
+                new MySqlParameter("Email",email),
+                new MySqlParameter("Password",password),
+                new MySqlParameter("RoleID",roleID)});
+
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
     }
 }

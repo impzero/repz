@@ -8,7 +8,8 @@ namespace repz_desktop
         static string dbConnection = "Server=localhost;Uid=root;Database=repz;Pwd=123456";
 
         static repz_core.mysql.UserStore uStore = new repz_core.mysql.UserStore(dbConnection);
-        static repz_core.services.User.UserService uService = new repz_core.services.User.UserService(uStore);
+        static repz_core.mysql.RoleStore rStore = new repz_core.mysql.RoleStore(dbConnection);
+        static repz_core.services.User.UserService uService = new repz_core.services.User.UserService(uStore, rStore);
 
         /// <summary>
         ///  The main entry point for the application.

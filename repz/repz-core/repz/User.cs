@@ -23,9 +23,9 @@
             _role = role;
         }
 
-        public bool ValidatePassword(string hash)
+        public bool ValidatePassword(string password)
         {
-            return  BCrypt.Net.BCrypt.Verify(this._password, hash);
+            return  BCrypt.Net.BCrypt.Verify(password, _password);
         }
     }
 }

@@ -117,6 +117,7 @@
             this.label5.Size = new System.Drawing.Size(89, 25);
             this.label5.TabIndex = 7;
             this.label5.Text = "Register";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // Login
             // 
