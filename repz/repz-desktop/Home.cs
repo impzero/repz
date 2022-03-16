@@ -21,5 +21,10 @@ namespace repz_desktop
                 listBox1.Items.Add($"ID: {recipe.ID}, Title: {recipe.Title}");
             }
         }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
