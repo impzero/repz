@@ -1,4 +1,4 @@
-﻿using repz_core.services.User;
+﻿using repz_core.services.user;
 
 namespace repz_desktop
 {

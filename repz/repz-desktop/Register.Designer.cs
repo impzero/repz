@@ -141,6 +141,7 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox1);
             this.Name = "Register";
+            this.ShowIcon = false;
             this.Text = "Register";
             this.ResumeLayout(false);
             this.PerformLayout();

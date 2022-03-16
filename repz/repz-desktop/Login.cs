@@ -1,14 +1,17 @@
-using repz_core.services.User;
+using repz_core.services.user;
+using repz_core.services.recipes;
 
 namespace repz_desktop
 {
     public partial class Login : Form
     {
         private UserService _us;
-        public Login(UserService us)
+        private RecipeService _rs;
+        public Login(UserService us, RecipeService rs)
         {
             InitializeComponent();
             this._us = us;
+            this._rs = rs;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,7 +28,9 @@ namespace repz_desktop
 
             if (user.Role.Name == "admin")
             {
-                
+                Home form = new Home(this._rs);
+                form.Show();
+                this.Hide();
             }
         }
 

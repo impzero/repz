@@ -1,5 +1,5 @@
 ﻿using repz_core;
-namespace repz_core.services.User
+namespace repz_core.services.user
 {
     public class UserService
     {

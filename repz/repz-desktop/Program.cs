@@ -1,4 +1,6 @@
-using repz_core;
+using repz_core.mysql;
+using repz_core.services.user;
+using repz_core.services.recipes;
 
 namespace repz_desktop
 {
@@ -7,9 +9,11 @@ namespace repz_desktop
 
         static string dbConnection = "Server=localhost;Uid=root;Database=repz;Pwd=123456";
 
-        static repz_core.mysql.UserStore uStore = new repz_core.mysql.UserStore(dbConnection);
-        static repz_core.mysql.RoleStore rStore = new repz_core.mysql.RoleStore(dbConnection);
-        static repz_core.services.User.UserService uService = new repz_core.services.User.UserService(uStore, rStore);
+        static UserStore uStore = new UserStore(dbConnection);
+        static RoleStore rStore = new RoleStore(dbConnection);
+        static RecipeStore repzStore = new RecipeStore(dbConnection);
+        static UserService uService = new UserService(uStore, rStore);
+        static RecipeService rService = new RecipeService(repzStore);
 
         /// <summary>
         ///  The main entry point for the application.
@@ -20,7 +24,7 @@ namespace repz_desktop
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Login(uService));
+            Application.Run(new Login(uService, rService));
         }
     }
 }
