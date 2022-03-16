@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "repz-desktop", "repz\repz-desktop.csproj", "{4061FC64-104F-4498-902A-DA274DD47914}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "repz", "repz", "{A0001409-71A2-4715-A7F7-0B7D71C5BA4C}"
+	ProjectSection(SolutionItems) = preProject
+		Product.cs = Product.cs
+		Role.cs = Role.cs
+		User.cs = User.cs
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerService1", "WorkerService1\WorkerService1.csproj", "{54EC9EAF-58CA-4C61-A816-794E4F80BEF7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4061FC64-104F-4498-902A-DA274DD47914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4061FC64-104F-4498-902A-DA274DD47914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4061FC64-104F-4498-902A-DA274DD47914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4061FC64-104F-4498-902A-DA274DD47914}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54EC9EAF-58CA-4C61-A816-794E4F80BEF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54EC9EAF-58CA-4C61-A816-794E4F80BEF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54EC9EAF-58CA-4C61-A816-794E4F80BEF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54EC9EAF-58CA-4C61-A816-794E4F80BEF7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B9A9D450-6813-4329-994A-FA87A73A7728}
+	EndGlobalSection
+EndGlobal

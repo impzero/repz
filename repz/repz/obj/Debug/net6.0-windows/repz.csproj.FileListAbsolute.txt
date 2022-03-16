@@ -1,0 +1,17 @@
+D:\Fontys\ADO\repz\repz\repz\bin\Debug\net6.0-windows\repz.exe
+D:\Fontys\ADO\repz\repz\repz\bin\Debug\net6.0-windows\repz.deps.json
+D:\Fontys\ADO\repz\repz\repz\bin\Debug\net6.0-windows\repz.runtimeconfig.json
+D:\Fontys\ADO\repz\repz\repz\bin\Debug\net6.0-windows\repz.dll
+D:\Fontys\ADO\repz\repz\repz\bin\Debug\net6.0-windows\repz.pdb
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\repz.csproj.AssemblyReference.cache
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\repz.Form1.resources
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\repz.csproj.GenerateResource.cache
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\repz.GeneratedMSBuildEditorConfig.editorconfig
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\repz.AssemblyInfoInputs.cache
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\repz.AssemblyInfo.cs
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\repz.csproj.CoreCompileInputs.cache
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\repz.dll
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\refint\repz.dll
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\repz.pdb
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\repz.genruntimeconfig.cache
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\ref\repz.dll
