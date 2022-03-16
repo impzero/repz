@@ -1,0 +1,17 @@
+D:\Fontys\ADO\repz\repz\repz\bin\Debug\net6.0-windows\repz-desktop.exe
+D:\Fontys\ADO\repz\repz\repz\bin\Debug\net6.0-windows\repz-desktop.deps.json
+D:\Fontys\ADO\repz\repz\repz\bin\Debug\net6.0-windows\repz-desktop.runtimeconfig.json
+D:\Fontys\ADO\repz\repz\repz\bin\Debug\net6.0-windows\repz-desktop.dll
+D:\Fontys\ADO\repz\repz\repz\bin\Debug\net6.0-windows\repz-desktop.pdb
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\repz-desktop.csproj.AssemblyReference.cache
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\repz.Login.resources
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\repz-desktop.csproj.GenerateResource.cache
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\repz-desktop.GeneratedMSBuildEditorConfig.editorconfig
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\repz-desktop.AssemblyInfoInputs.cache
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\repz-desktop.AssemblyInfo.cs
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\repz-desktop.csproj.CoreCompileInputs.cache
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\repz-desktop.dll
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\refint\repz-desktop.dll
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\repz-desktop.pdb
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\repz-desktop.genruntimeconfig.cache
+D:\Fontys\ADO\repz\repz\repz\obj\Debug\net6.0-windows\ref\repz-desktop.dll

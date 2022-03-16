@@ -1,0 +1,12 @@
+D:\Fontys\ADO\repz\repz\repz-core\obj\Debug\net6.0\repz-core.csproj.AssemblyReference.cache
+D:\Fontys\ADO\repz\repz\repz-core\obj\Debug\net6.0\repz-core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Fontys\ADO\repz\repz\repz-core\obj\Debug\net6.0\repz-core.AssemblyInfoInputs.cache
+D:\Fontys\ADO\repz\repz\repz-core\obj\Debug\net6.0\repz-core.AssemblyInfo.cs
+D:\Fontys\ADO\repz\repz\repz-core\obj\Debug\net6.0\repz-core.csproj.CoreCompileInputs.cache
+D:\Fontys\ADO\repz\repz\repz-core\bin\Debug\net6.0\repz-core.deps.json
+D:\Fontys\ADO\repz\repz\repz-core\bin\Debug\net6.0\repz-core.dll
+D:\Fontys\ADO\repz\repz\repz-core\bin\Debug\net6.0\repz-core.pdb
+D:\Fontys\ADO\repz\repz\repz-core\obj\Debug\net6.0\repz-core.dll
+D:\Fontys\ADO\repz\repz\repz-core\obj\Debug\net6.0\refint\repz-core.dll
+D:\Fontys\ADO\repz\repz\repz-core\obj\Debug\net6.0\repz-core.pdb
+D:\Fontys\ADO\repz\repz\repz-core\obj\Debug\net6.0\ref\repz-core.dll
