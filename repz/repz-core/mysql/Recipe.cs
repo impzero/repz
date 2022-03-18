@@ -11,37 +11,65 @@ namespace repz_core.mysql
             _dbConn = dbConn;
         }
 
-        public views.RecipeProducts? GetRecipeByID(int id)
+        public bool SetRecipeApproved(int id, bool approved)
         {
-            string query = "SELECT p.id, p.name, r.id, r.title, r.description, r.approved FROM recipes r " +
-                "JOIN recipe_products rp on rp.recipe_id = r.id " +
-                "JOIN products p on p.id = rp.product_id " +
-                "WHERE id = @Id";
+            string query = @"UPDATE recipes SET approved = @Approved WHERE id = @Id";
 
             try
             {
-                views.RecipeProducts? recipe = null;
-                var reader = MySqlHelper.ExecuteReader(this._dbConn, query);
-                if (!reader.HasRows) return null;
+                MySqlHelper.ExecuteNonQuery(this._dbConn, query, new MySqlParameter[] { new MySqlParameter("Id", id), new MySqlParameter("Approved", approved) });
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
 
-                while (reader.Read())
+        }
+
+        public views.RecipeProducts? GetRecipeByID(int id)
+        {
+            string recipeQuery = @"SELECT id, title, description, approved FROM recipes 
+                            WHERE id = @Id";
+
+            string productIdsQuery = @"SELECT group_concat(rp.product_id) FROM recipes r
+                                       JOIN recipe_products rp on rp.recipe_id = r.id 
+                                       WHERE r.id = @RecipeID
+                                       GROUP BY r.id";
+
+            string productsByIDsQuery = @"SELECT id, name FROM products WHERE FIND_IN_SET(id, @IDs)";
+
+            try
+            {
+                repz.Recipe recipe;
+                using (var reader = MySqlHelper.ExecuteReader(this._dbConn, recipeQuery, new MySqlParameter[] { new MySqlParameter("Id", id) }))
                 {
-                    var productId = reader.GetInt32(0);
-                    var productName = reader.GetString(1);
-                    var recipeId = reader.GetInt32(2);
-                    var recipeTitle = reader.GetString(3);
-                    var recipeDescription = reader.GetString(4);
-                    var recipeApproved= reader.GetBoolean(5);
+                    if (!reader.HasRows)
+                        return null;
 
-                    recipe = new views.RecipeProducts(new repz.Recipe(recipeId,recipeTitle,recipeDescription,recipeApproved), )
+                    reader.Read();
 
-                    var title = reader.GetString(1);
-
-                    recipes.Add(new views.RecipeTitle(id, title));
+                    recipe = new repz.Recipe(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetBoolean(3));
                 }
 
-                return recipes;
+                var ids = Convert.ToString(
+                    MySqlHelper.ExecuteScalar(this._dbConn, productIdsQuery, new MySqlParameter[] { new MySqlParameter("RecipeID", id) })
+                    );
 
+                List<repz.Product> products = new List<repz.Product>();
+                using (var reader = MySqlHelper.ExecuteReader(this._dbConn, productsByIDsQuery, new MySqlParameter[] { new MySqlParameter("IDs", ids) }))
+                {
+                    while (reader.Read())
+                    {
+                        var productId = reader.GetInt32(0);
+                        var productName = reader.GetString(1);
+                        products.Add(new repz.Product(productId, productName));
+                    }
+                }
+
+                views.RecipeProducts recipeProducts = new views.RecipeProducts(recipe, products);
+
+                return recipeProducts;
             }
             catch (Exception)
             {

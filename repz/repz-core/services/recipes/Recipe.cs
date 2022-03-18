@@ -12,5 +12,8 @@ namespace repz_core.services.recipes
         }
 
         public List<views.RecipeTitle>? GetAllRecipes() => _recipeStore.GetAllUnapprovedRecipes();
+        public views.RecipeProducts? GetRecipeByID(int id) => _recipeStore.GetRecipeByID(id);
+        public bool SetRecipeApproved(int id, bool approved) => _recipeStore.SetRecipeApproved(id, approved);
+
     }
 }

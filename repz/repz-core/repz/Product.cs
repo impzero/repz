@@ -8,10 +8,10 @@
         public int ID { get => _id; set => _id = value; }
         public string Name { get => _name; set => _name = value; }
 
-        public Product(string name, int id)
+        public Product(int id, string name)
         {
-            _name = name;
             _id = id;
+            _name = name;
         }
     }
 }
