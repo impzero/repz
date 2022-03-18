@@ -1,3 +1,0 @@
-D:\Fontys\ADO\repz\repz\repz2\obj\Debug\repz.csproj.AssemblyReference.cache
-D:\Fontys\ADO\repz\repz\repz2\obj\Debug\repz.csproj.SuggestedBindingRedirects.cache
-D:\Fontys\ADO\repz\repz\repz2\obj\Debug\repz.csproj.CoreCompileInputs.cache
