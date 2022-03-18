@@ -7,6 +7,7 @@ namespace repz_web.Pages.auth
     {
         public void OnGet()
         {
+
         }
     }
 }
