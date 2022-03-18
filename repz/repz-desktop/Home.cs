@@ -59,7 +59,7 @@ namespace repz_desktop
         private void button1_Click(object sender, EventArgs e)
         {
             var id = listBox1.SelectedItem.ToString()!.Substring(3, 2);
-            if(!_rs.SetRecipeApproved(Convert.ToInt32(id), true))
+            if (!_rs.SetRecipeApproved(Convert.ToInt32(id), true))
             {
                 MessageBox.Show("Failed to approve recipe");
                 return;

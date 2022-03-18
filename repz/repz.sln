@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "repz-desktop", "repz-deskto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "repz-core", "repz-core\repz-core.csproj", "{AA914691-3226-4D20-B831-46301B704F07}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "repz-web", "repz-web\repz-web.csproj", "{9ADD7AEF-960E-4B73-B56A-9B0EA9AB4E49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AA914691-3226-4D20-B831-46301B704F07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA914691-3226-4D20-B831-46301B704F07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA914691-3226-4D20-B831-46301B704F07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ADD7AEF-960E-4B73-B56A-9B0EA9AB4E49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ADD7AEF-960E-4B73-B56A-9B0EA9AB4E49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ADD7AEF-960E-4B73-B56A-9B0EA9AB4E49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ADD7AEF-960E-4B73-B56A-9B0EA9AB4E49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
