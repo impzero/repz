@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "repz-desktop", "repz-desktop\repz-desktop.csproj", "{F7B1344F-7FDD-4A18-97DD-0A25D9AA812C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "repz-desktop", "repz-desktop\repz-desktop.csproj", "{F7B1344F-7FDD-4A18-97DD-0A25D9AA812C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "repz-core", "repz-core\repz-core.csproj", "{AA914691-3226-4D20-B831-46301B704F07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "repz-core", "repz-core\repz-core.csproj", "{AA914691-3226-4D20-B831-46301B704F07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "repz-web", "repz-web\repz-web.csproj", "{9ADD7AEF-960E-4B73-B56A-9B0EA9AB4E49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "repz-web", "repz-web\repz-web.csproj", "{9ADD7AEF-960E-4B73-B56A-9B0EA9AB4E49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

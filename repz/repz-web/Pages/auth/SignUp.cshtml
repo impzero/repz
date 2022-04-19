@@ -1,0 +1,31 @@
+﻿@page
+@section Styles {
+<link rel="stylesheet" href="~/css/login.css" />
+}
+@model repz_web.Pages.auth.SignUpModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<form class="login-form" method="post">
+    <h1>Login</h1>
+    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+
+    <label asp-for="credentials.Name">Name</label>
+    <input type="text" asp-for="credentials.Name" class="form-control" />
+    <span class="text-danger" asp-validation-for="credentials.Name"></span>
+
+
+    <label asp-for="credentials.Email">Email</label>
+    <input type="text" asp-for="credentials.Email" class="form-control" />
+    <span class="text-danger" asp-validation-for="credentials.Email"></span>
+
+
+    <label asp-for="credentials.Password">Password</label>
+    <input type="password" asp-for="credentials.Password" class="form-control" />
+    <span class="text-danger" asp-validation-for="credentials.Password"></span>
+    <button type="submit">Sign in</button>
+    <a asp-page="/auth/Register">sign up</a>
+</form>
+
+
