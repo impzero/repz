@@ -33,7 +33,7 @@ namespace repz_web.Pages.auth
             return Page();
         }
 
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPost()
         {
             if (!ModelState.IsValid) return Page();
 
@@ -43,10 +43,11 @@ namespace repz_web.Pages.auth
             var claims = new List<Claim>
             {
                 new(ClaimTypes.Name, user.Name),
+                new(ClaimTypes.Role, user.Role.Name),
                 new(ClaimTypes.NameIdentifier, user.ID.ToString()),
             };
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-            HttpContext.SignInAsync(new ClaimsPrincipal(claimsIdentity));
+            await HttpContext.SignInAsync(new ClaimsPrincipal(claimsIdentity));
 
             return RedirectToPage("/Index");
         }
