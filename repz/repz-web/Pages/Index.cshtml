@@ -1,4 +1,7 @@
 ﻿@page
+@section Styles {
+    <link rel="stylesheet" href="~/css/home.css"/>
+}
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -15,7 +18,27 @@
     </div>
     <div class="column side">
         <div>Create</div>
-        <div class="container"></div>
+        <div class="container">
+            <form class="create-recipe-form" method="post">
+                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+
+                <label asp-for="createRecipeDTO.Title">Title</label>
+                <input type="text" placeholder="" asp-for="createRecipeDTO.Title" class="form-control" />
+                <span class="text-danger" asp-validation-for="createRecipeDTO.Title"></span>
+
+                <label asp-for="createRecipeDTO.Description">Description</label>
+                <input type="text" placeholder="" asp-for="createRecipeDTO.Description" class="form-control" />
+                <span class="text-danger" asp-validation-for="createRecipeDTO.Description"></span>
+
+                <label asp-for="createRecipeDTO.Products">Products</label>
+                <input type="text" placeholder="" asp-for="createRecipeDTO.Products" class="form-control" />
+                <span class="text-danger" asp-validation-for="createRecipeDTO.Products"></span>
+                <span class="tip">each product should be comma separated</span>
+
+
+                <button type="submit">Create</button>
+            </form>
+        </div>
     </div>
 </div>
 

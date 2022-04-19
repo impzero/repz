@@ -1,0 +1,28 @@
+﻿.create-recipe-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 2rem;
+}
+
+.create-recipe-form > input {
+    width: 90%;
+    margin-bottom: 1.5rem;
+}
+
+.create-recipe-form > button {
+    margin-top: 2rem;
+    width: 90%;
+}
+
+.tip {
+    font-weight: 300;
+    color: gray;
+    font-size: 0.9rem;
+}

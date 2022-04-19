@@ -24,7 +24,6 @@ namespace repz_core.mysql
             {
                 return false;
             }
-
         }
 
         public views.RecipeProducts? GetRecipeByID(int id)
@@ -102,5 +101,26 @@ namespace repz_core.mysql
                 return null;
             }
         }
+        public int SaveRecipe(string title, string description, bool approved)
+        {
+            var query = @"INSERT INTO recipes (title,description,approved)
+                          VALUES (@Title, @Description, @Approved)";
+            try
+            {
+                var id = (int)MySqlHelper.ExecuteScalar(this._dbConn, query, new MySqlParameter[] {
+                new MySqlParameter("Title",title),
+                new MySqlParameter("Description",description),
+                new MySqlParameter("Approved",approved)
+                });
+
+                return id;
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+        }
+
     }
+
 }
