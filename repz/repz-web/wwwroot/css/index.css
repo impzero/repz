@@ -57,6 +57,7 @@ main {
 
 #username {
     font-weight: bold;
+    padding-right: 0.8rem;
 }
 
 /* Container for flexboxes */
@@ -79,9 +80,9 @@ main {
 
     /* Left and right column */
     .column.side {
-        -webkit-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
+        -webkit-flex: 1.5;
+        -ms-flex: 1.5;
+        flex: 1.5;
     }
 
     /* Middle column */

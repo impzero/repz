@@ -22,15 +22,12 @@
             @if (User.Identity!.IsAuthenticated)
             {
                 <div id="greeter">
-                    Hi,&nbsp;
                     <div id="username">@User.Identity.Name</div>
                     <a asp-page="/auth/signout">sign out</a>
                 </div>
             }
         </div>
-        <div>
-            @RenderBody()
-        </div>
+        @RenderBody()
         <div class="footer">
             <div>Repz 2022</div>
         </div>

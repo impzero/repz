@@ -7,8 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
     options =>
     {
-        options.LoginPath = new PathString("/auth/Login");
-        options.AccessDeniedPath = new PathString("/auth/Login");
+        options.LoginPath = new PathString("/auth/SignIn");
+        options.AccessDeniedPath = new PathString("/auth/SignIn");
     });
 
 // Add services to the container.
