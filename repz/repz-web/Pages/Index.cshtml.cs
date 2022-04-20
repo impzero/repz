@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using repz_core.services.recipes;
 using System.ComponentModel.DataAnnotations;
 
 namespace repz_web.Pages
@@ -12,14 +13,20 @@ namespace repz_web.Pages
         public CreateRecipeDTO createRecipeDTO { get; set; }
         private readonly ILogger<IndexModel> _logger;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        private RecipeService _recipeService;
+
+        public IndexModel(ILogger<IndexModel> logger, RecipeService recipeService)
         {
             _logger = logger;
+            _recipeService = recipeService;
         }
 
-        public void OnPost()
+        public IActionResult OnPost()
         {
+            var products = createRecipeDTO.Products.Trim().Split(',');
+            _recipeService.CreateRecipe(createRecipeDTO.Title, createRecipeDTO.Description, products);
 
+            return RedirectToPage('/');
         }
 
         public void OnGet()

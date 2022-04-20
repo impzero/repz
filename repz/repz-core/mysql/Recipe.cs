@@ -107,13 +107,13 @@ namespace repz_core.mysql
                           VALUES (@Title, @Description, @Approved)";
             try
             {
-                var id = (int)MySqlHelper.ExecuteScalar(this._dbConn, query, new MySqlParameter[] {
+                MySqlHelper.ExecuteNonQuery(this._dbConn, query, new MySqlParameter[] {
                 new MySqlParameter("Title",title),
                 new MySqlParameter("Description",description),
                 new MySqlParameter("Approved",approved)
                 });
 
-                return id;
+                return (int)MySqlHelper.ExecuteScalar(this._dbConn, "SELECT LAST_INSERT_ID() from recipes;");
             }
             catch (Exception)
             {
@@ -121,6 +121,22 @@ namespace repz_core.mysql
             }
         }
 
+        public bool AssociateProductsWithRecipe(string[] productIDs, string recipeID)
+        {
+            var query = @"INSERT INTO recipe_products (product_id,recipe_id)
+                          VALUES (@ProductID, @RecipeID)";
+            try
+            {
+                foreach (var pID in productIDs)
+                {
+                    MySqlHelper.ExecuteNonQuery(this._dbConn, query, new MySqlParameter[] { new MySqlParameter("ProductID", pID), new MySqlParameter("RecipeID", recipeID) });
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
-
 }

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using repz_core.mysql;
+using repz_core.services.recipes;
 using repz_core.services.user;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,13 +16,17 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 builder.Services.AddRazorPages();
 
 string dbConnection = "Server=localhost;Uid=root;Database=repz;Pwd=123456";
+
 RecipeStore rStore = new RecipeStore(dbConnection);
+ProductStore pStore = new ProductStore(dbConnection);
 UserStore uStore = new UserStore(dbConnection);
 RoleStore roleStore = new RoleStore(dbConnection);
 
 UserService uService = new UserService(uStore, roleStore);
+RecipeService rService = new RecipeService(rStore, pStore);
 
 builder.Services.AddSingleton<UserService>(uService);
+builder.Services.AddSingleton<RecipeService>(rService);
 
 var app = builder.Build();
 

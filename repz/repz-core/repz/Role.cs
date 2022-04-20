@@ -13,6 +13,5 @@
             _name = name;
             _id = id;
         }
-
     }
 }

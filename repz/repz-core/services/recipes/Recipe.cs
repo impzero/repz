@@ -4,11 +4,13 @@ namespace repz_core.services.recipes
 {
     public class RecipeService
     {
-        private mysql.RecipeStore _recipeStore;
+        private RecipeStore _recipeStore;
+        private ProductStore _productStore;
 
-        public RecipeService(RecipeStore recipeStore)
+        public RecipeService(RecipeStore recipeStore, ProductStore productStore)
         {
             _recipeStore = recipeStore;
+            _productStore = productStore;
         }
 
         public List<views.RecipeTitle>? GetAllRecipes() => _recipeStore.GetAllUnapprovedRecipes();
@@ -16,9 +18,21 @@ namespace repz_core.services.recipes
         public bool SetRecipeApproved(int id, bool approved) => _recipeStore.SetRecipeApproved(id, approved);
         public bool CreateRecipe(string title, string description, string[] products)
         {
+            try
+            {
+                var recipeID = _recipeStore.SaveRecipe(title, description, false);
+                List<string> productIds = new List<string>(products.Length);
+                foreach (var product in products)
+                {
+                    productIds.Add(_productStore.SaveProduct(product).ToString());
+                }
 
-            return true;
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
-
     }
 }
