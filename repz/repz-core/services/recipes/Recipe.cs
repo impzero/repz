@@ -17,6 +17,7 @@ namespace repz_core.services.recipes
         public bool CreateRecipe(string title, string description, string[] products)
         {
 
+            return true;
         }
 
     }
