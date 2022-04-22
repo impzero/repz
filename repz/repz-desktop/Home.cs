@@ -21,17 +21,21 @@ namespace repz_desktop
         {
             var recipes = _rs.GetAllRecipes(false);
             if (recipes is null) return;
-            listBox1.Items.Clear();
-            foreach (var recipe in recipes)
-            {
-                listBox1.Items.Add($"ID: {recipe.ID}, Title: {recipe.Title}");
-            }
+            listBox1.DisplayMember = "Title";
+            listBox1.ValueMember = "ID";
+            listBox1.DataSource = recipes;
+
+
+            //foreach (var recipe in recipes)
+            //{
+            //    listBox1.Items.Add($"ID: {recipe.ID}, Title: {recipe.Title}");
+            //}
 
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var id = listBox1.SelectedItem.ToString()!.Substring(3, 2);
+            var id = listBox1.SelectedValue;
 
             var recipe = _rs.GetRecipeByID(Convert.ToInt32(id));
 
@@ -58,7 +62,7 @@ namespace repz_desktop
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var id = listBox1.SelectedItem.ToString()!.Substring(3, 2);
+            var id = listBox1.SelectedValue;
             if (!_rs.SetRecipeApproved(Convert.ToInt32(id), true))
             {
                 MessageBox.Show("Failed to approve recipe");

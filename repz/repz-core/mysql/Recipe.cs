@@ -115,7 +115,7 @@ namespace repz_core.mysql
                 new MySqlParameter("Approved",approved)
                 });
 
-                return (int)MySqlHelper.ExecuteScalar(this._dbConn, "SELECT LAST_INSERT_ID() from recipes;");
+                return Convert.ToInt32(MySqlHelper.ExecuteScalar(this._dbConn, "SELECT LAST_INSERT_ID() from recipes;"));
             }
             catch (Exception)
             {

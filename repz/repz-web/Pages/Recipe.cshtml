@@ -1,0 +1,14 @@
+﻿@page
+@section Styles {
+<link rel="stylesheet" href="~/css/home.css" />
+}
+
+@model repz_web.Pages.RecipeModel
+@{
+}
+
+<div id="recipe-card">
+    <h2>@Model.recipe.Recipe.Title</h2>
+    <p id="recipe-description">@Model.recipe.Recipe.Description</p>
+    <p id="recipe-description">@string.Join(", ", Model.recipe.Products.Select(x => x.Name))</p>
+</div>

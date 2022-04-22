@@ -27,6 +27,11 @@ namespace repz_core.services.recipes
                     productIds.Add(_productStore.SaveProduct(product).ToString());
                 }
 
+                if (!_recipeStore.AssociateProductsWithRecipe(productIds.ToArray(), recipeID.ToString()))
+                {
+                    return false;
+                }
+
                 return true;
             }
             catch (Exception)

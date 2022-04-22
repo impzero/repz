@@ -28,10 +28,12 @@
         <div class="container" id="middle-container">
             @foreach (var recipe in Model.recipes)
             {
-                <div id="recipe-card">
+                <a id="recipe-router" asp-page="Recipe" asp-route-recipeID="@recipe.ID">
+                <div id="recipe-card" >
                     <h2>@recipe.Title</h2>
                     <p id="recipe-description">@recipe.Description</p>
                 </div>
+                </a>
             }
         </div>
     </div>

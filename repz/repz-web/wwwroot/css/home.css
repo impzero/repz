@@ -75,3 +75,7 @@ h1 {
     color: #5c5c5c;
     font-weight: 400;
 }
+
+#recipe-router {
+    all:unset;
+}

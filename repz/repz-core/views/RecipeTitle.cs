@@ -7,9 +7,9 @@
         public string Title { get; set; }
         public string Description { get; set; }
 
-        public RecipeTitle(int iD, string title, string description)
+        public RecipeTitle(int id, string title, string description)
         {
-            ID = iD;
+            ID = id;
             Title = title;
             Description = description;
         }

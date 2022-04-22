@@ -22,7 +22,7 @@ namespace repz_core.mysql
                 });
 
 
-                return (int)MySqlHelper.ExecuteScalar(this._dbConn, "SELECT LAST_INSERT_ID() from products;");
+                return Convert.ToInt32(MySqlHelper.ExecuteScalar(this._dbConn, "SELECT LAST_INSERT_ID() from products;"));
             }
             catch (Exception)
             {
