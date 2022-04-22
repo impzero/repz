@@ -40,7 +40,7 @@ main {
     height: 100%;
     width: 100%;
     border-radius: 20px;
-    overflow-y:scroll;
+    overflow-y: scroll;
 }
 
 #logo {
@@ -103,7 +103,7 @@ main {
     height: 10%;
 }
 
-input  {
+input {
     border-radius: 10px;
     padding: 1rem;
     outline: none;
@@ -112,44 +112,44 @@ input  {
     background-color: #eee;
 }
 
-input[type="checkbox"] {
-    /* Add if not using autoprefixer */
-    -webkit-appearance: none;
-    appearance: none;
-    /* For iOS < 15 to remove gradient background */
-    background-color: #fff;
-    /* Not removed via appearance */
-    margin: 0;
-    font: inherit;
-    color: black;
-    width: 1.15em;
-    height: 1.15em;
-    border: 0.15em solid black;
-    border-radius: 0.15em;
-    transform: translateY(-0.075em);
-    display: grid;
-    place-content: center;
-}
-
-    input[type="checkbox"]::before {
-        content: "";
-        width: 0.65em;
-        height: 0.65em;
-        transform: scale(0);
-        transition: 50ms transform ease-in-out;
-        box-shadow: inset 1em 1em black;
-        transform-origin: bottom left;
-        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    input[type="checkbox"] {
+        /* Add if not using autoprefixer */
+        -webkit-appearance: none;
+        appearance: none;
+        /* For iOS < 15 to remove gradient background */
+        background-color: #fff;
+        /* Not removed via appearance */
+        margin: 0;
+        font: inherit;
+        color: black;
+        width: 1.15em;
+        height: 1.15em;
+        border: 0.15em solid black;
+        border-radius: 0.15em;
+        transform: translateY(-0.075em);
+        display: grid;
+        place-content: center;
     }
 
-    input[type="checkbox"]:focus {
-        /*outline: max(2px, 0.15em) solid black;*/
-        outline-offset: max(2px, 0.15em);
-    }
+        input[type="checkbox"]::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            transform: scale(0);
+            transition: 50ms transform ease-in-out;
+            box-shadow: inset 1em 1em black;
+            transform-origin: bottom left;
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        }
 
-    input[type="checkbox"]:checked::before {
-        transform: scale(1);
-    }
+        input[type="checkbox"]:focus {
+            /*outline: max(2px, 0.15em) solid black;*/
+            outline-offset: max(2px, 0.15em);
+        }
+
+        input[type="checkbox"]:checked::before {
+            transform: scale(1);
+        }
 
 button {
     border-radius: 10px;

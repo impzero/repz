@@ -13,7 +13,10 @@ namespace repz_web.Pages
         [BindProperty]
         public CreateRecipeDTO createRecipeDTO { get; set; }
 
-        public List<repz_core.views.Product> products { get; set; }
+        [BindProperty]
+        public List<string> productFilter { get; set; }
+
+        public List<repz_core.views.Product> products;
 
         private readonly ILogger<IndexModel> _logger;
 
@@ -23,7 +26,11 @@ namespace repz_web.Pages
         {
             _logger = logger;
             _recipeService = recipeService;
-            products = productService.GetAllProducts()!;
+            products = productService.GetAllProducts();
+            if (products is null)
+            {
+                products = new List<repz_core.views.Product>();
+            }
         }
 
         public IActionResult OnPost()
@@ -32,6 +39,11 @@ namespace repz_web.Pages
             _recipeService.CreateRecipe(createRecipeDTO.Title, createRecipeDTO.Description, products);
 
             return RedirectToPage('/');
+        }
+
+        public void OnPostProductFilter()
+        {
+
         }
 
         public void OnGet()

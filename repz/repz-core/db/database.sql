@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `products` (
   `id` int NOT NULL,
-  `name` text NOT NULL
+  `name` text UNIQUE NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------

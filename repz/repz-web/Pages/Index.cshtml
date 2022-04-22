@@ -11,17 +11,16 @@
     <div class="column side">
         <div>Filter by ingredient</div>
         <div class="container">
-
-            <div id="filter-list">
-                <button id="filter-btn" type="submit">Filter</button>
+            <form id="filter-list" method="post">
+                <button id="filter-btn" type="submit" asp-page-handler="ProductFilter">Filter</button>
                 @foreach (var product in Model.products)
                 {
                     <div id="test">
-                        <input type="checkbox" name="" placeholder="" />
+                        <input name="productFilter" type="checkbox" value="@product.Name"/>
                         <label id="product-name">@product.Name</label>
                     </div>
                 }
-            </div>
+            </form>
         </div>
     </div>
     <div class="column middle">
