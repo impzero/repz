@@ -16,7 +16,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-string dbConnection = "Server=localhost;Uid=root;Database=repz;Pwd=123456";
+string dbConnection = "Server=studmysql01.fhict.local;Uid=dbi480877;Database=dbi480877;Pwd=ZwbbRPP68c62tvs;";
 
 RecipeStore rStore = new RecipeStore(dbConnection);
 ProductStore pStore = new ProductStore(dbConnection);
