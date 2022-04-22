@@ -27,6 +27,7 @@ namespace repz_web.Pages
         {
             _logger = logger;
             _recipeService = recipeService;
+            productFilter = new List<string>();
             products = productService.GetAllProducts();
             recipes = recipeService.GetAllRecipes(true);
             if (products is null)
@@ -42,7 +43,7 @@ namespace repz_web.Pages
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid) return Page();
-            var products = createRecipeDTO.Products.Trim().Split(',');
+            var products = createRecipeDTO.Products.Trim().Split(',').ToList().Select(p => p.Trim()).ToArray();
             _recipeService.CreateRecipe(createRecipeDTO.Title, createRecipeDTO.Description, products);
 
             return RedirectToPage('/');
@@ -50,7 +51,7 @@ namespace repz_web.Pages
 
         public void OnPostProductFilter()
         {
-
+            this.recipes = _recipeService.GetAllFilteredRecipes(productFilter.ToArray())!;
         }
 
         public void OnGet()

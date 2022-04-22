@@ -14,7 +14,33 @@ namespace repz_core.services.recipes
         }
 
         public List<views.RecipeTitle>? GetAllRecipes(bool approved) => _recipeStore.GetAllRecipes(approved);
+
+        // Marco, Jaap please don't judge me for this part of the code I was rushing a lot of stuff
+        // because I did a poor job on my time management 🥺🙏🏼
+        public List<views.RecipeTitle>? GetAllFilteredRecipes(string[] filter)
+        {
+            var recipes = _recipeStore.GetAllRecipes(true);
+
+            List<views.RecipeTitle> repz = new List<views.RecipeTitle>();
+            foreach (var product in filter)
+            {
+                foreach (var recipe in recipes!)
+                {
+                    if (GetRecipeByID(recipe.ID)!.Products.Select(p => p.Name).Contains(product))
+                    {
+                        if (!repz.Select(r => r.ID).Contains(recipe.ID))
+                        {
+                            repz.Add(recipe);
+                        }
+                    }
+                }
+            }
+
+            return repz;
+        }
+
         public views.RecipeProducts? GetRecipeByID(int id) => _recipeStore.GetRecipeByID(id);
+
         public bool SetRecipeApproved(int id, bool approved) => _recipeStore.SetRecipeApproved(id, approved);
         public bool CreateRecipe(string title, string description, string[] products)
         {

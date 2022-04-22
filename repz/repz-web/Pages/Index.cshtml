@@ -16,7 +16,14 @@
                 @foreach (var product in Model.products)
                 {
                     <div id="test">
-                        <input name="productFilter" type="checkbox" value="@product.Name" />
+                        @if (Model.productFilter.Contains(product.Name))
+                        {
+                            <input name="productFilter" type="checkbox" checked="checked" value="@product.Name" />
+                        }
+                        else
+                        {
+                            <input name="productFilter" type="checkbox" value="@product.Name" />
+                        }
                         <label id="product-name">@product.Name</label>
                     </div>
                 }
@@ -29,10 +36,10 @@
             @foreach (var recipe in Model.recipes)
             {
                 <a id="recipe-router" asp-page="Recipe" asp-route-recipeID="@recipe.ID">
-                <div id="recipe-card" >
-                    <h2>@recipe.Title</h2>
-                    <p id="recipe-description">@recipe.Description</p>
-                </div>
+                    <div id="recipe-card">
+                        <h2>@recipe.Title</h2>
+                        <p id="recipe-description">@recipe.Description</p>
+                    </div>
                 </a>
             }
         </div>
