@@ -12,8 +12,16 @@
         <div>Filter by ingredient</div>
         <div class="container">
 
-            <label>Fries</label>
-            <input type="checkbox" name="checkbox" placeholder="" />
+            <div id="filter-list">
+                <button id="filter-btn" type="submit">Filter</button>
+                @foreach (var product in Model.products)
+                {
+                    <div id="test">
+                        <input type="checkbox" name="" placeholder="" />
+                        <label id="product-name">@product.Name</label>
+                    </div>
+                }
+            </div>
         </div>
     </div>
     <div class="column middle">

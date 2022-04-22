@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using repz_core.mysql;
+using repz_core.services.product;
 using repz_core.services.recipes;
 using repz_core.services.user;
 
@@ -24,9 +25,11 @@ RoleStore roleStore = new RoleStore(dbConnection);
 
 UserService uService = new UserService(uStore, roleStore);
 RecipeService rService = new RecipeService(rStore, pStore);
+ProductService pService = new ProductService(pStore);
 
 builder.Services.AddSingleton<UserService>(uService);
 builder.Services.AddSingleton<RecipeService>(rService);
+builder.Services.AddSingleton<ProductService>(pService);
 
 var app = builder.Build();
 

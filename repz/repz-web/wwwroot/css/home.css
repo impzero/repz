@@ -26,3 +26,26 @@ h1 {
     color: gray;
     font-size: 0.9rem;
 }
+
+#test {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-items:center;
+    height:100%;
+    /*background-color: red;*/
+    padding:0.5rem;
+}
+
+#filter-list {
+    display: flex;
+    flex-direction: column;
+}
+
+#product-name {
+    margin-left: 1rem;
+}
+
+#filter-btn {
+    margin-bottom: 1rem;
+}

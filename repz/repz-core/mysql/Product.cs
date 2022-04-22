@@ -29,5 +29,32 @@ namespace repz_core.mysql
                 return -1;
             }
         }
+
+        public List<views.Product>? GetAllProducts()
+        {
+            string query = "SELECT id, name FROM products";
+
+            try
+            {
+                List<views.Product> products = new List<views.Product>();
+                var reader = MySqlHelper.ExecuteReader(this._dbConn, query);
+                if (!reader.HasRows) return null;
+
+                while (reader.Read())
+                {
+                    var id = reader.GetInt32(0);
+                    var name = reader.GetString(1);
+
+                    products.Add(new views.Product(id, name));
+                }
+
+                return products;
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 }
