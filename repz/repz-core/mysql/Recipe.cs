@@ -75,22 +75,24 @@ namespace repz_core.mysql
                 return null;
             }
         }
-        public List<views.RecipeTitle>? GetAllUnapprovedRecipes()
+
+        public List<views.RecipeTitle>? GetAllRecipes(bool approved)
         {
-            string query = "SELECT id, title FROM recipes WHERE approved = false";
+            string query = "SELECT id, title, description FROM recipes WHERE approved = @Approved";
 
             try
             {
                 List<views.RecipeTitle> recipes = new List<views.RecipeTitle>();
-                var reader = MySqlHelper.ExecuteReader(this._dbConn, query);
+                var reader = MySqlHelper.ExecuteReader(this._dbConn, query, new MySqlParameter[] { new MySqlParameter("Approved", approved) });
                 if (!reader.HasRows) return null;
 
                 while (reader.Read())
                 {
                     var id = reader.GetInt32(0);
                     var title = reader.GetString(1);
+                    var description = reader.GetString(2);
 
-                    recipes.Add(new views.RecipeTitle(id, title));
+                    recipes.Add(new views.RecipeTitle(id, title, description));
                 }
 
                 return recipes;

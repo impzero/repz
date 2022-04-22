@@ -13,7 +13,7 @@ namespace repz_core.services.recipes
             _productStore = productStore;
         }
 
-        public List<views.RecipeTitle>? GetAllRecipes() => _recipeStore.GetAllUnapprovedRecipes();
+        public List<views.RecipeTitle>? GetAllRecipes(bool approved) => _recipeStore.GetAllRecipes(approved);
         public views.RecipeProducts? GetRecipeByID(int id) => _recipeStore.GetRecipeByID(id);
         public bool SetRecipeApproved(int id, bool approved) => _recipeStore.SetRecipeApproved(id, approved);
         public bool CreateRecipe(string title, string description, string[] products)

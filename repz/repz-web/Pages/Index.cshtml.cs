@@ -17,6 +17,7 @@ namespace repz_web.Pages
         public List<string> productFilter { get; set; }
 
         public List<repz_core.views.Product> products;
+        public List<repz_core.views.RecipeTitle> recipes;
 
         private readonly ILogger<IndexModel> _logger;
 
@@ -27,14 +28,20 @@ namespace repz_web.Pages
             _logger = logger;
             _recipeService = recipeService;
             products = productService.GetAllProducts();
+            recipes = recipeService.GetAllRecipes(true);
             if (products is null)
             {
                 products = new List<repz_core.views.Product>();
+            }
+            if (recipes is null)
+            {
+                recipes = new List<repz_core.views.RecipeTitle>();
             }
         }
 
         public IActionResult OnPost()
         {
+            if (!ModelState.IsValid) return Page();
             var products = createRecipeDTO.Products.Trim().Split(',');
             _recipeService.CreateRecipe(createRecipeDTO.Title, createRecipeDTO.Description, products);
 

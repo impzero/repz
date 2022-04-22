@@ -19,7 +19,7 @@ namespace repz_desktop
 
         private void LoadRecipes()
         {
-            var recipes = _rs.GetAllRecipes();
+            var recipes = _rs.GetAllRecipes(false);
             if (recipes is null) return;
             listBox1.Items.Clear();
             foreach (var recipe in recipes)

@@ -91,6 +91,10 @@ main {
         -webkit-flex: 2;
         -ms-flex: 2;
         flex: 2;
+        display:flex;
+        width:100%;
+        justify-content:center;
+        align-items:center
     }
 
 /* Style the footer */

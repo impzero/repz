@@ -16,7 +16,7 @@
                 @foreach (var product in Model.products)
                 {
                     <div id="test">
-                        <input name="productFilter" type="checkbox" value="@product.Name"/>
+                        <input name="productFilter" type="checkbox" value="@product.Name" />
                         <label id="product-name">@product.Name</label>
                     </div>
                 }
@@ -25,7 +25,15 @@
     </div>
     <div class="column middle">
         <div>Explore</div>
-        <div class="container"></div>
+        <div class="container" id="middle-container">
+            @foreach (var recipe in Model.recipes)
+            {
+                <div id="recipe-card">
+                    <h2>@recipe.Title</h2>
+                    <p id="recipe-description">@recipe.Description</p>
+                </div>
+            }
+        </div>
     </div>
     <div class="column side">
         <div>Create</div>

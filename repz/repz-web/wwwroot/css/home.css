@@ -30,11 +30,11 @@ h1 {
 #test {
     display: flex;
     flex-direction: row;
-    align-items:center;
-    justify-items:center;
-    height:100%;
+    align-items: center;
+    justify-items: center;
+    height: 100%;
     /*background-color: red;*/
-    padding:0.5rem;
+    padding: 0.5rem;
 }
 
 #filter-list {
@@ -48,4 +48,30 @@ h1 {
 
 #filter-btn {
     margin-bottom: 1rem;
+}
+
+#middle-container {
+    justify-content: center;
+}
+
+#recipe-card {
+    /*width: 60%;*/
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #eee;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: all .2s ease-in-out;
+}
+
+    #recipe-card:hover {
+        cursor: pointer;
+        box-shadow: 0px 2px 39px rgba(0, 0, 0, 0.1);
+        /*transform: scale(1.1);*/
+    }
+
+#recipe-description {
+    color: #5c5c5c;
+    font-weight: 400;
 }
